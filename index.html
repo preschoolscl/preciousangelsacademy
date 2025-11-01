@@ -71,7 +71,7 @@
     </div>
   </section>
 
-  <!-- Precious Angels Admission Form -->
+<!-- Precious Angels Admission Form -->
 <section id="apply" class="py-16 px-6 bg-pink-50">
   <!-- Header Section -->
   <div class="max-w-3xl mx-auto bg-white p-8 rounded-2xl shadow-md mb-10">
@@ -96,92 +96,94 @@
       Admission Form 2025
     </h2>
 
-    <form class="space-y-6">
+    <form action="https://api.web3forms.com/submit" method="POST" class="space-y-6">
+      <input type="hidden" name="access_key" value="c21f8b67-2159-48b0-af59-33374a1c6a61">
+      <input type="hidden" name="redirect" value="thank-you.html">
+
       <!-- Child Information -->
       <h3 class="text-xl font-semibold text-pink-500 border-b pb-2">Child Information</h3>
-
       <div>
         <label class="block font-semibold mb-1">Child's Name & Surname</label>
-        <input type="text" class="w-full border rounded-lg p-2" placeholder="Enter child's full name" required>
+        <input type="text" name="child_name" class="w-full border rounded-lg p-2" placeholder="Enter child's full name" required>
       </div>
 
       <div>
         <label class="block font-semibold mb-1">Home Address</label>
-        <input type="text" class="w-full border rounded-lg p-2" placeholder="Enter home address" required>
+        <input type="text" name="child_address" class="w-full border rounded-lg p-2" placeholder="Enter home address" required>
       </div>
 
       <div class="grid md:grid-cols-2 gap-4">
         <div>
           <label class="block font-semibold mb-1">Date of Birth</label>
-          <input type="date" class="w-full border rounded-lg p-2" required>
+          <input type="date" name="child_dob" class="w-full border rounded-lg p-2" required>
         </div>
         <div>
           <label class="block font-semibold mb-1">Allergies</label>
-          <input type="text" class="w-full border rounded-lg p-2" placeholder="Specify if any">
+          <input type="text" name="child_allergies" class="w-full border rounded-lg p-2" placeholder="Specify if any">
         </div>
       </div>
 
       <div>
         <label class="block font-semibold mb-1">Home Language</label>
-        <input type="text" class="w-full border rounded-lg p-2" placeholder="e.g. English, isiZulu" required>
+        <input type="text" name="child_language" class="w-full border rounded-lg p-2" placeholder="e.g. English, isiZulu" required>
       </div>
 
       <!-- Parent/Guardian -->
       <h3 class="text-xl font-semibold text-pink-500 border-b pb-2">Parent/Guardian Information</h3>
       <div>
         <label class="block font-semibold mb-1">Name of Parent/Guardian</label>
-        <input type="text" class="w-full border rounded-lg p-2" required>
+        <input type="text" name="guardian_name" class="w-full border rounded-lg p-2" required>
       </div>
       <div>
         <label class="block font-semibold mb-1">Home Address</label>
-        <input type="text" class="w-full border rounded-lg p-2" required>
+        <input type="text" name="guardian_address" class="w-full border rounded-lg p-2" required>
       </div>
 
       <div class="grid md:grid-cols-2 gap-4">
         <div>
           <label class="block font-semibold mb-1">Relationship to Child</label>
-          <input type="text" class="w-full border rounded-lg p-2" placeholder="e.g. Mother, Father, Guardian">
+          <input type="text" name="guardian_relationship" class="w-full border rounded-lg p-2" placeholder="e.g. Mother, Father, Guardian">
         </div>
         <div>
           <label class="block font-semibold mb-1">Tel/Cell</label>
-          <input type="tel" class="w-full border rounded-lg p-2" placeholder="071 123 4567">
+          <input type="tel" name="guardian_phone" class="w-full border rounded-lg p-2" placeholder="071 123 4567">
         </div>
       </div>
 
       <div>
         <label class="block font-semibold mb-1">Person(s) Responsible for Fetching the Child</label>
-        <input type="text" class="w-full border rounded-lg p-2" placeholder="Name of authorized person(s)">
+        <input type="text" name="fetch_person" class="w-full border rounded-lg p-2" placeholder="Name of authorized person(s)">
       </div>
 
       <!-- Emergency Contact -->
       <h3 class="text-xl font-semibold text-pink-500 border-b pb-2">Emergency Contact</h3>
       <div>
         <label class="block font-semibold mb-1">Name of Contact Person</label>
-        <input type="text" class="w-full border rounded-lg p-2" required>
+        <input type="text" name="emergency_name" class="w-full border rounded-lg p-2" required>
       </div>
       <div>
         <label class="block font-semibold mb-1">Home Address</label>
-        <input type="text" class="w-full border rounded-lg p-2" required>
+        <input type="text" name="emergency_address" class="w-full border rounded-lg p-2" required>
       </div>
       <div class="grid md:grid-cols-2 gap-4">
         <div>
           <label class="block font-semibold mb-1">Relationship</label>
-          <input type="text" class="w-full border rounded-lg p-2">
+          <input type="text" name="emergency_relationship" class="w-full border rounded-lg p-2">
         </div>
         <div>
           <label class="block font-semibold mb-1">Tel/Cell</label>
-          <input type="tel" class="w-full border rounded-lg p-2" placeholder="071 123 4567">
+          <input type="tel" name="emergency_phone" class="w-full border rounded-lg p-2" placeholder="071 123 4567">
         </div>
       </div>
 
       <div class="grid md:grid-cols-2 gap-4">
         <div>
           <label class="block font-semibold mb-1">Name of Doctor</label>
-          <input type="text" class="w-full border rounded-lg p-2">
+          <input type="text" name="doctor_name" class="w-full border rounded-lg p-2">
         </div>
         <div>
           <label class="block font-semibold mb-1">Doctor's Tel</label>
-          <input type="tel" class="w-full border rounded-lg p-2" placeholder="012 345 6789">
+          <input type="tel" name="doctor_phone" class="w-full border rounded-lg p-2" placeholder="012 345 6789">
         </div>
       </div>
 
@@ -189,13 +191,50 @@
         *Please attach a copy of the Birth Certificate and Clinic Card of the child.
       </p>
 
+      <!-- Rules & Regulations Collapsible -->
+      <details class="mt-6 bg-pink-50 border border-pink-200 rounded-lg p-4">
+        <summary class="font-bold text-pink-600 cursor-pointer">View Rules and Regulations</summary>
+        <div class="mt-3 text-gray-700 space-y-2 text-sm leading-relaxed">
+          <p><strong>School Hours:</strong> 6:00am – 4:00pm, Monday–Friday</p>
+          <ul class="list-disc ml-5">
+            <li>Children 3 months–2 years: R550/month</li>
+            <li>Children 3–4 years: R500/month</li>
+            <li>Registration fee: R250 (once-off)</li>
+            <li>Late pickup after 16:00 incurs R60 penalty.</li>
+            <li>Fees due 1st of every month; after the 7th incurs R80 fine.</li>
+            <li>Fees apply even during holidays (Centre does not close).</li>
+            <li>Uniform required Mon–Thu and for school trips.</li>
+            <li>Parents must attend meetings and school events.</li>
+            <li>No sick child (fever/contagious) allowed at school.</li>
+            <li>Two-month notice required before withdrawal.</li>
+          </ul>
+
+          <p class="mt-3 font-semibold">Banking Details:</p>
+          <p>Acc Name: Precious Angels Day Care Centre<br>
+          Bank: FNB<br>
+          Acc No: 62928494913<br>
+          Ref: (Your Child’s Name)</p>
+
+          <p class="italic mt-2">*This contract is binding for the whole year.</p>
+        </div>
+      </details>
+
+      <!-- Agreement -->
+      <div class="mt-4">
+        <label class="flex items-start space-x-2">
+          <input type="checkbox" name="agreement" required>
+          <span class="text-sm text-gray-700">I, the parent/guardian, agree to the Rules and Regulations of Precious Angels Day Care Centre.</span>
+        </label>
+      </div>
+
       <!-- Submit -->
-      <button class="bg-pink-600 text-white font-bold py-3 px-6 rounded-full hover:bg-pink-700 transition w-full">
+      <button type="submit" class="bg-pink-600 text-white font-bold py-3 px-6 rounded-full hover:bg-pink-700 transition w-full">
         Submit Admission Form
       </button>
     </form>
   </div>
 </section>
+
 
 
   <!-- Footer -->
@@ -236,3 +275,4 @@
   <script>lucide.createIcons();</script>
 </body>
 </html>
+
