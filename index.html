@@ -317,11 +317,34 @@
   <a href="https://wa.me/27713169900" target="_blank" class="fixed bottom-6 right-6 bg-green-500 text-white p-4 rounded-full shadow-lg hover:bg-green-600 transition">
     <i data-lucide="message-circle" class="w-6 h-6"></i>
   </a>
+<!-- JavaScript -->
+<script>
+  const menuBtn = document.getElementById('menu-btn');
+  const closeBtn = document.getElementById('close-btn');
+  const mobileMenu = document.getElementById('mobile-menu');
+  const overlay = document.getElementById('overlay');
+
+  // Open menu
+  menuBtn.addEventListener('click', () => {
+    mobileMenu.classList.remove('translate-x-full');
+    overlay.classList.remove('hidden');
+  });
+
+  // Close menu
+  const closeMenu = () => {
+    mobileMenu.classList.add('translate-x-full');
+    overlay.classList.add('hidden');
+  };
+
+  closeBtn.addEventListener('click', closeMenu);
+  overlay.addEventListener('click', closeMenu);
+</script>
 
   <script src="https://cdn.jsdelivr.net/npm/lightbox2@2.11.3/dist/js/lightbox.min.js"></script>
   <script>lucide.createIcons();</script>
 </body>
 </html>
+
 
 
 
