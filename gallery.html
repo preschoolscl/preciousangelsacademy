@@ -82,42 +82,50 @@
 
 <!-- Lightbox2 CSS & JS -->
 <link href="https://cdn.jsdelivr.net/npm/lightbox2@2.11.3/dist/css/lightbox.min.css" rel="stylesheet">
-<script src="https://cdn.jsdelivr.net/npm/lightbox2@2.11.3/dist/js/lightbox.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/lightbox2@2.11.3/dist/js/lightbox-plus-jquery.min.js"></script>
 
 <script>
-  // Dynamically load 20 images
-  const galleryGrid = document.getElementById('gallery-grid');
-  const totalImages = 20;
+  document.addEventListener("DOMContentLoaded", function() {
+    const galleryGrid = document.getElementById('gallery-grid');
+    const totalImages = 20;
 
-  for (let i = 1; i <= totalImages; i++) {
-    const link = document.createElement('a');
-    link.href = `gallery/${i}.jpg`;
-    link.setAttribute('data-lightbox', 'precious-gallery'); // Important: all share same group name
-    link.setAttribute('data-title', `Gallery Image ${i}`);
+    // Dynamically load images
+    for (let i = 1; i <= totalImages; i++) {
+      const link = document.createElement('a');
+      link.href = `gallery/${i}.jpg`;
+      link.setAttribute('data-lightbox', 'precious-gallery');
+      link.setAttribute('data-title', `Gallery Image ${i}`);
 
-    const wrapper = document.createElement('div');
-    wrapper.className = 'w-full h-64 bg-white rounded-xl shadow-md overflow-hidden flex items-center justify-center';
+      const wrapper = document.createElement('div');
+      wrapper.className = 'w-full h-64 bg-white rounded-xl shadow-md overflow-hidden flex items-center justify-center';
 
-    const img = document.createElement('img');
-    img.src = `gallery/${i}.jpg`;
-    img.loading = 'lazy';
-    img.alt = `Gallery Image ${i}`;
-    img.className = 'object-cover w-full h-full hover:scale-105 transform transition duration-300';
+      const img = document.createElement('img');
+      img.src = `gallery/${i}.jpg`;
+      img.loading = 'lazy';
+      img.alt = `Gallery Image ${i}`;
+      img.className = 'object-cover w-full h-full hover:scale-105 transform transition duration-300';
 
-    wrapper.appendChild(img);
-    link.appendChild(wrapper);
-    galleryGrid.appendChild(link);
-  }
+      wrapper.appendChild(img);
+      link.appendChild(wrapper);
+      galleryGrid.appendChild(link);
+    }
 
-  // Lightbox configuration
-  lightbox.option({
-    'resizeDuration': 300,
-    'wrapAround': true,
-    'fadeDuration': 300,
-    'imageFadeDuration': 300,
-    'disableScrolling': true
+    // ✅ Important: reinitialize Lightbox after adding new elements
+    if (window.lightbox) {
+      lightbox.init();
+      lightbox.option({
+        resizeDuration: 300,
+        wrapAround: true,
+        fadeDuration: 300,
+        imageFadeDuration: 300,
+        disableScrolling: true
+      });
+    }
   });
 </script>
+</body>
+  
+
 
 
 
