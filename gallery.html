@@ -72,135 +72,110 @@
 <div class="mt-24"></div>
 
 <!-- Gallery -->
-<section class="py-16 px-6 md:px-12 flex-1 bg-yellow-50">
+<section class="py-16 px-6 md:px-12 flex-1 bg-yellow-50 relative">
   <h2 class="text-3xl font-bold text-center text-pink-600 mb-8">Our Happy Moments</h2>
 
-  <div class="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+  <!-- Wrapper with scroll buttons -->
+  <div class="relative">
+    <!-- Left Button -->
+    <button id="scroll-left" class="hidden md:flex absolute left-0 top-1/2 -translate-y-1/2 bg-pink-600 text-white p-3 rounded-full shadow-lg hover:bg-pink-700 z-10">
+      &#10094;
+    </button>
 
-    <!-- 1 to 20 Images -->
-    <a href="gallery/1.jpg" data-lightbox="gallery" data-title="Gallery Image 1">
-      <div class="w-full h-56 bg-white rounded-lg shadow-md overflow-hidden">
-        <img src="gallery/1.jpg" loading="lazy" alt="Gallery Image 1" class="object-cover w-full h-full hover:scale-105 transform transition duration-300">
-      </div>
-    </a>
+    <!-- Right Button -->
+    <button id="scroll-right" class="hidden md:flex absolute right-0 top-1/2 -translate-y-1/2 bg-pink-600 text-white p-3 rounded-full shadow-lg hover:bg-pink-700 z-10">
+      &#10095;
+    </button>
 
-    <a href="gallery/2.jpg" data-lightbox="gallery" data-title="Gallery Image 2">
-      <div class="w-full h-56 bg-white rounded-lg shadow-md overflow-hidden">
-        <img src="gallery/2.jpg" loading="lazy" alt="Gallery Image 2" class="object-cover w-full h-full hover:scale-105 transform transition duration-300">
-      </div>
-    </a>
+    <!-- Scrollable Gallery -->
+    <div id="gallery-scroll" class="flex overflow-x-auto space-x-4 pb-4 snap-x snap-mandatory scroll-smooth">
+      <!-- 20 images -->
+      <!-- Each one opens in Lightbox -->
+      <!-- Adjust file names if needed -->
+      <!-- Image blocks start -->
+      <a href="gallery/1.jpg" data-lightbox="gallery" data-title="Gallery Image 1" class="snap-start shrink-0 w-64">
+        <img src="gallery/1.jpg" loading="lazy" alt="Gallery 1" class="w-64 h-48 object-cover rounded-lg shadow hover:scale-105 transform transition duration-300">
+      </a>
 
-    <a href="gallery/3.jpg" data-lightbox="gallery" data-title="Gallery Image 3">
-      <div class="w-full h-56 bg-white rounded-lg shadow-md overflow-hidden">
-        <img src="gallery/3.jpg" loading="lazy" alt="Gallery Image 3" class="object-cover w-full h-full hover:scale-105 transform transition duration-300">
-      </div>
-    </a>
+      <a href="gallery/2.jpg" data-lightbox="gallery" data-title="Gallery Image 2" class="snap-start shrink-0 w-64">
+        <img src="gallery/2.jpg" loading="lazy" alt="Gallery 2" class="w-64 h-48 object-cover rounded-lg shadow hover:scale-105 transform transition duration-300">
+      </a>
 
-    <a href="gallery/4.jpg" data-lightbox="gallery" data-title="Gallery Image 4">
-      <div class="w-full h-56 bg-white rounded-lg shadow-md overflow-hidden">
-        <img src="gallery/4.jpg" loading="lazy" alt="Gallery Image 4" class="object-cover w-full h-full hover:scale-105 transform transition duration-300">
-      </div>
-    </a>
+      <a href="gallery/3.jpg" data-lightbox="gallery" data-title="Gallery Image 3" class="snap-start shrink-0 w-64">
+        <img src="gallery/3.jpg" loading="lazy" alt="Gallery 3" class="w-64 h-48 object-cover rounded-lg shadow hover:scale-105 transform transition duration-300">
+      </a>
 
-    <a href="gallery/5.jpg" data-lightbox="gallery" data-title="Gallery Image 5">
-      <div class="w-full h-56 bg-white rounded-lg shadow-md overflow-hidden">
-        <img src="gallery/5.jpg" loading="lazy" alt="Gallery Image 5" class="object-cover w-full h-full hover:scale-105 transform transition duration-300">
-      </div>
-    </a>
+      <a href="gallery/4.jpg" data-lightbox="gallery" data-title="Gallery Image 4" class="snap-start shrink-0 w-64">
+        <img src="gallery/4.jpg" loading="lazy" alt="Gallery 4" class="w-64 h-48 object-cover rounded-lg shadow hover:scale-105 transform transition duration-300">
+      </a>
 
-    <a href="gallery/6.jpg" data-lightbox="gallery" data-title="Gallery Image 6">
-      <div class="w-full h-56 bg-white rounded-lg shadow-md overflow-hidden">
-        <img src="gallery/6.jpg" loading="lazy" alt="Gallery Image 6" class="object-cover w-full h-full hover:scale-105 transform transition duration-300">
-      </div>
-    </a>
+      <a href="gallery/5.jpg" data-lightbox="gallery" data-title="Gallery Image 5" class="snap-start shrink-0 w-64">
+        <img src="gallery/5.jpg" loading="lazy" alt="Gallery 5" class="w-64 h-48 object-cover rounded-lg shadow hover:scale-105 transform transition duration-300">
+      </a>
 
-    <a href="gallery/7.jpg" data-lightbox="gallery" data-title="Gallery Image 7">
-      <div class="w-full h-56 bg-white rounded-lg shadow-md overflow-hidden">
-        <img src="gallery/7.jpg" loading="lazy" alt="Gallery Image 7" class="object-cover w-full h-full hover:scale-105 transform transition duration-300">
-      </div>
-    </a>
+      <a href="gallery/6.jpg" data-lightbox="gallery" data-title="Gallery Image 6" class="snap-start shrink-0 w-64">
+        <img src="gallery/6.jpg" loading="lazy" alt="Gallery 6" class="w-64 h-48 object-cover rounded-lg shadow hover:scale-105 transform transition duration-300">
+      </a>
 
-    <a href="gallery/8.jpg" data-lightbox="gallery" data-title="Gallery Image 8">
-      <div class="w-full h-56 bg-white rounded-lg shadow-md overflow-hidden">
-        <img src="gallery/8.jpg" loading="lazy" alt="Gallery Image 8" class="object-cover w-full h-full hover:scale-105 transform transition duration-300">
-      </div>
-    </a>
+      <a href="gallery/7.jpg" data-lightbox="gallery" data-title="Gallery Image 7" class="snap-start shrink-0 w-64">
+        <img src="gallery/7.jpg" loading="lazy" alt="Gallery 7" class="w-64 h-48 object-cover rounded-lg shadow hover:scale-105 transform transition duration-300">
+      </a>
 
-    <a href="gallery/9.jpg" data-lightbox="gallery" data-title="Gallery Image 9">
-      <div class="w-full h-56 bg-white rounded-lg shadow-md overflow-hidden">
-        <img src="gallery/9.jpg" loading="lazy" alt="Gallery Image 9" class="object-cover w-full h-full hover:scale-105 transform transition duration-300">
-      </div>
-    </a>
+      <a href="gallery/8.jpg" data-lightbox="gallery" data-title="Gallery Image 8" class="snap-start shrink-0 w-64">
+        <img src="gallery/8.jpg" loading="lazy" alt="Gallery 8" class="w-64 h-48 object-cover rounded-lg shadow hover:scale-105 transform transition duration-300">
+      </a>
 
-    <a href="gallery/10.jpg" data-lightbox="gallery" data-title="Gallery Image 10">
-      <div class="w-full h-56 bg-white rounded-lg shadow-md overflow-hidden">
-        <img src="gallery/10.jpg" loading="lazy" alt="Gallery Image 10" class="object-cover w-full h-full hover:scale-105 transform transition duration-300">
-      </div>
-    </a>
+      <a href="gallery/9.jpg" data-lightbox="gallery" data-title="Gallery Image 9" class="snap-start shrink-0 w-64">
+        <img src="gallery/9.jpg" loading="lazy" alt="Gallery 9" class="w-64 h-48 object-cover rounded-lg shadow hover:scale-105 transform transition duration-300">
+      </a>
 
-    <a href="gallery/11.jpg" data-lightbox="gallery" data-title="Gallery Image 11">
-      <div class="w-full h-56 bg-white rounded-lg shadow-md overflow-hidden">
-        <img src="gallery/11.jpg" loading="lazy" alt="Gallery Image 11" class="object-cover w-full h-full hover:scale-105 transform transition duration-300">
-      </div>
-    </a>
+      <a href="gallery/10.jpg" data-lightbox="gallery" data-title="Gallery Image 10" class="snap-start shrink-0 w-64">
+        <img src="gallery/10.jpg" loading="lazy" alt="Gallery 10" class="w-64 h-48 object-cover rounded-lg shadow hover:scale-105 transform transition duration-300">
+      </a>
 
-    <a href="gallery/12.jpg" data-lightbox="gallery" data-title="Gallery Image 12">
-      <div class="w-full h-56 bg-white rounded-lg shadow-md overflow-hidden">
-        <img src="gallery/12.jpg" loading="lazy" alt="Gallery Image 12" class="object-cover w-full h-full hover:scale-105 transform transition duration-300">
-      </div>
-    </a>
+      <a href="gallery/11.jpg" data-lightbox="gallery" data-title="Gallery Image 11" class="snap-start shrink-0 w-64">
+        <img src="gallery/11.jpg" loading="lazy" alt="Gallery 11" class="w-64 h-48 object-cover rounded-lg shadow hover:scale-105 transform transition duration-300">
+      </a>
 
-    <a href="gallery/13.jpg" data-lightbox="gallery" data-title="Gallery Image 13">
-      <div class="w-full h-56 bg-white rounded-lg shadow-md overflow-hidden">
-        <img src="gallery/13.jpg" loading="lazy" alt="Gallery Image 13" class="object-cover w-full h-full hover:scale-105 transform transition duration-300">
-      </div>
-    </a>
+      <a href="gallery/12.jpg" data-lightbox="gallery" data-title="Gallery Image 12" class="snap-start shrink-0 w-64">
+        <img src="gallery/12.jpg" loading="lazy" alt="Gallery 12" class="w-64 h-48 object-cover rounded-lg shadow hover:scale-105 transform transition duration-300">
+      </a>
 
-    <a href="gallery/14.jpg" data-lightbox="gallery" data-title="Gallery Image 14">
-      <div class="w-full h-56 bg-white rounded-lg shadow-md overflow-hidden">
-        <img src="gallery/14.jpg" loading="lazy" alt="Gallery Image 14" class="object-cover w-full h-full hover:scale-105 transform transition duration-300">
-      </div>
-    </a>
+      <a href="gallery/13.jpg" data-lightbox="gallery" data-title="Gallery Image 13" class="snap-start shrink-0 w-64">
+        <img src="gallery/13.jpg" loading="lazy" alt="Gallery 13" class="w-64 h-48 object-cover rounded-lg shadow hover:scale-105 transform transition duration-300">
+      </a>
 
-    <a href="gallery/15.jpg" data-lightbox="gallery" data-title="Gallery Image 15">
-      <div class="w-full h-56 bg-white rounded-lg shadow-md overflow-hidden">
-        <img src="gallery/15.jpg" loading="lazy" alt="Gallery Image 15" class="object-cover w-full h-full hover:scale-105 transform transition duration-300">
-      </div>
-    </a>
+      <a href="gallery/14.jpg" data-lightbox="gallery" data-title="Gallery Image 14" class="snap-start shrink-0 w-64">
+        <img src="gallery/14.jpg" loading="lazy" alt="Gallery 14" class="w-64 h-48 object-cover rounded-lg shadow hover:scale-105 transform transition duration-300">
+      </a>
 
-    <a href="gallery/16.jpg" data-lightbox="gallery" data-title="Gallery Image 16">
-      <div class="w-full h-56 bg-white rounded-lg shadow-md overflow-hidden">
-        <img src="gallery/16.jpg" loading="lazy" alt="Gallery Image 16" class="object-cover w-full h-full hover:scale-105 transform transition duration-300">
-      </div>
-    </a>
+      <a href="gallery/15.jpg" data-lightbox="gallery" data-title="Gallery Image 15" class="snap-start shrink-0 w-64">
+        <img src="gallery/15.jpg" loading="lazy" alt="Gallery 15" class="w-64 h-48 object-cover rounded-lg shadow hover:scale-105 transform transition duration-300">
+      </a>
 
-    <a href="gallery/17.jpg" data-lightbox="gallery" data-title="Gallery Image 17">
-      <div class="w-full h-56 bg-white rounded-lg shadow-md overflow-hidden">
-        <img src="gallery/17.jpg" loading="lazy" alt="Gallery Image 17" class="object-cover w-full h-full hover:scale-105 transform transition duration-300">
-      </div>
-    </a>
+      <a href="gallery/16.jpg" data-lightbox="gallery" data-title="Gallery Image 16" class="snap-start shrink-0 w-64">
+        <img src="gallery/16.jpg" loading="lazy" alt="Gallery 16" class="w-64 h-48 object-cover rounded-lg shadow hover:scale-105 transform transition duration-300">
+      </a>
 
-    <a href="gallery/18.jpg" data-lightbox="gallery" data-title="Gallery Image 18">
-      <div class="w-full h-56 bg-white rounded-lg shadow-md overflow-hidden">
-        <img src="gallery/18.jpg" loading="lazy" alt="Gallery Image 18" class="object-cover w-full h-full hover:scale-105 transform transition duration-300">
-      </div>
-    </a>
+      <a href="gallery/17.jpg" data-lightbox="gallery" data-title="Gallery Image 17" class="snap-start shrink-0 w-64">
+        <img src="gallery/17.jpg" loading="lazy" alt="Gallery 17" class="w-64 h-48 object-cover rounded-lg shadow hover:scale-105 transform transition duration-300">
+      </a>
 
-    <a href="gallery/19.jpg" data-lightbox="gallery" data-title="Gallery Image 19">
-      <div class="w-full h-56 bg-white rounded-lg shadow-md overflow-hidden">
-        <img src="gallery/19.jpg" loading="lazy" alt="Gallery Image 19" class="object-cover w-full h-full hover:scale-105 transform transition duration-300">
-      </div>
-    </a>
+      <a href="gallery/18.jpg" data-lightbox="gallery" data-title="Gallery Image 18" class="snap-start shrink-0 w-64">
+        <img src="gallery/18.jpg" loading="lazy" alt="Gallery 18" class="w-64 h-48 object-cover rounded-lg shadow hover:scale-105 transform transition duration-300">
+      </a>
 
-    <a href="gallery/20.jpg" data-lightbox="gallery" data-title="Gallery Image 20">
-      <div class="w-full h-56 bg-white rounded-lg shadow-md overflow-hidden">
-        <img src="gallery/20.jpg" loading="lazy" alt="Gallery Image 20" class="object-cover w-full h-full hover:scale-105 transform transition duration-300">
-      </div>
-    </a>
+      <a href="gallery/19.jpg" data-lightbox="gallery" data-title="Gallery Image 19" class="snap-start shrink-0 w-64">
+        <img src="gallery/19.jpg" loading="lazy" alt="Gallery 19" class="w-64 h-48 object-cover rounded-lg shadow hover:scale-105 transform transition duration-300">
+      </a>
 
+      <a href="gallery/20.jpg" data-lightbox="gallery" data-title="Gallery Image 20" class="snap-start shrink-0 w-64">
+        <img src="gallery/20.jpg" loading="lazy" alt="Gallery 20" class="w-64 h-48 object-cover rounded-lg shadow hover:scale-105 transform transition duration-300">
+      </a>
+      <!-- Image blocks end -->
+    </div>
   </div>
 </section>
-
 
   <!-- Footer -->
   <footer class="bg-pink-700 text-white py-10">
@@ -237,41 +212,42 @@
   </a>
 <!-- JavaScript -->
 <script>
-  const menuBtn = document.getElementById('menu-btn');
-  const closeBtn = document.getElementById('close-btn');
-  const mobileMenu = document.getElementById('mobile-menu');
-  const overlay = document.getElementById('overlay');
+  // Scroll buttons for gallery
+  const scrollContainer = document.getElementById('gallery-scroll');
+  const scrollLeftBtn = document.getElementById('scroll-left');
+  const scrollRightBtn = document.getElementById('scroll-right');
 
-  // Open menu
-  menuBtn.addEventListener('click', () => {
-    mobileMenu.classList.remove('translate-x-full');
-    overlay.classList.remove('hidden');
+  // Show arrows only if scrollable
+  const checkScroll = () => {
+    const scrollable = scrollContainer.scrollWidth > scrollContainer.clientWidth;
+    scrollLeftBtn.style.display = scrollable ? 'flex' : 'none';
+    scrollRightBtn.style.display = scrollable ? 'flex' : 'none';
+  };
+  checkScroll();
+
+  // Smooth scroll
+  scrollRightBtn.addEventListener('click', () => {
+    scrollContainer.scrollBy({ left: 300, behavior: 'smooth' });
+  });
+  scrollLeftBtn.addEventListener('click', () => {
+    scrollContainer.scrollBy({ left: -300, behavior: 'smooth' });
   });
 
-  // Close menu
-  const closeMenu = () => {
-    mobileMenu.classList.add('translate-x-full');
-    overlay.classList.add('hidden');
-  };
+  // Recheck on resize
+  window.addEventListener('resize', checkScroll);
 
-  closeBtn.addEventListener('click', closeMenu);
-  overlay.addEventListener('click', closeMenu);
-</script>
-
-  <script src="https://cdn.jsdelivr.net/npm/lightbox2@2.11.3/dist/js/lightbox.min.js"></script>
-  <script>lucide.createIcons();</script>
-  <script>
+  // Lightbox settings
   lightbox.option({
     'resizeDuration': 300,
     'wrapAround': true,
     'fadeDuration': 300,
-    'imageFadeDuration': 300,
-    'disableScrolling': true
+    'imageFadeDuration': 300
   });
 </script>
 
 </body>
 </html>
+
 
 
 
