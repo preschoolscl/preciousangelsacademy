@@ -75,79 +75,48 @@
 <section class="py-16 px-6 md:px-12 bg-yellow-50">
   <h2 class="text-3xl font-bold text-center text-pink-600 mb-8">Our Happy Moments</h2>
 
-  <div class="relative">
-    <!-- Left Button -->
-    <button id="scroll-left" class="hidden md:flex absolute left-0 top-1/2 -translate-y-1/2 bg-pink-600 text-white p-3 rounded-full shadow-lg hover:bg-pink-700 z-10">
-      &#10094;
-    </button>
-
-    <!-- Right Button -->
-    <button id="scroll-right" class="hidden md:flex absolute right-0 top-1/2 -translate-y-1/2 bg-pink-600 text-white p-3 rounded-full shadow-lg hover:bg-pink-700 z-10">
-      &#10095;
-    </button>
-
-    <!-- Horizontal Scroll Gallery -->
-    <div id="gallery-scroll"
-         class="flex overflow-x-auto gap-4 pb-4 scroll-smooth snap-x snap-mandatory">
-      <!-- Each image block -->
-      <!-- Adjust number of images as needed -->
-      <template id="gallery-template">
-        <a href="#" data-lightbox="gallery" data-title="" class="snap-start shrink-0 w-64 flex-none">
-          <img src="#" loading="lazy" alt="" class="w-64 h-48 object-cover rounded-2xl shadow hover:scale-105 transform transition duration-300">
-        </a>
-      </template>
-    </div>
+  <div id="gallery-grid" class="grid sm:grid-cols-2 md:grid-cols-3 gap-6">
+    <!-- Images will load dynamically -->
   </div>
 </section>
 
 <script>
-  // Dynamically load images 1–20
-  const gallery = document.getElementById('gallery-scroll');
-  const template = document.getElementById('gallery-template').content;
+  // Dynamically load 20 images into the gallery
+  const galleryGrid = document.getElementById('gallery-grid');
+  const totalImages = 20;
 
-  for (let i = 1; i <= 20; i++) {
-    const item = template.cloneNode(true);
-    const link = item.querySelector('a');
-    const img = item.querySelector('img');
+  for (let i = 1; i <= totalImages; i++) {
+    const link = document.createElement('a');
     link.href = `gallery/${i}.jpg`;
-    link.dataset.title = `Gallery Image ${i}`;
+    link.setAttribute('data-lightbox', 'gallery');
+    link.setAttribute('data-title', `Gallery Image ${i}`);
+
+    const wrapper = document.createElement('div');
+    wrapper.className = 'w-full h-64 bg-white rounded-xl shadow-md overflow-hidden flex items-center justify-center';
+
+    const img = document.createElement('img');
     img.src = `gallery/${i}.jpg`;
+    img.loading = 'lazy';
     img.alt = `Gallery Image ${i}`;
-    gallery.appendChild(item);
+    img.className = 'object-cover w-full h-full hover:scale-105 transform transition duration-300';
+
+    wrapper.appendChild(img);
+    link.appendChild(wrapper);
+    galleryGrid.appendChild(link);
   }
 
-  // Scroll buttons
-  const scrollLeftBtn = document.getElementById('scroll-left');
-  const scrollRightBtn = document.getElementById('scroll-right');
-
-  const checkScroll = () => {
-    const scrollable = gallery.scrollWidth > gallery.clientWidth;
-    scrollLeftBtn.style.display = scrollable ? 'flex' : 'none';
-    scrollRightBtn.style.display = scrollable ? 'flex' : 'none';
-  };
-
-  checkScroll();
-
-  scrollRightBtn.addEventListener('click', () => {
-    gallery.scrollBy({ left: 300, behavior: 'smooth' });
-  });
-
-  scrollLeftBtn.addEventListener('click', () => {
-    gallery.scrollBy({ left: -300, behavior: 'smooth' });
-  });
-
-  window.addEventListener('resize', checkScroll);
-
-  // Lightbox config
+  // Configure Lightbox2
   lightbox.option({
     'resizeDuration': 300,
     'wrapAround': true,
     'fadeDuration': 300,
-    'imageFadeDuration': 300
+    'imageFadeDuration': 300,
+    'disableScrolling': true,
+    'positionFromTop': 100
   });
 </script>
-</body>
-</html>
+
+
 
 
 
